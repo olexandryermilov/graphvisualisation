@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da4b3412-947e-433c-83ec-c5a0214ca75b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph.txt" afterPath="$PROJECT_DIR$/graph.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css" afterPath="$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java" afterPath="$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java" afterPath="$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -80,7 +77,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-67">
@@ -124,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -452,11 +449,11 @@
         <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/src/main/java/model/MyGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/DGraph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/graph.txt" />
         <option value="$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css" />
         <option value="$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
   </component>
@@ -674,12 +671,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510950166674</updated>
-      <workItem from="1510950172889" duration="25598000" />
+      <workItem from="1510950172889" duration="25721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25598000" />
+    <option name="totallyTimeSpent" value="25721000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -863,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -949,6 +936,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-67">
           <caret line="80" column="70" lean-forward="false" selection-start-line="80" selection-start-column="70" selection-end-line="80" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

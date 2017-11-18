@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.Scanner;
-
+//SPASIBO BARIKU ZA TESTY
 public class Main {
     final static String filePath = "graph.txt";
     final static String configPath = "config.txt";
