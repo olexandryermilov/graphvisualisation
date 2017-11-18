@@ -2,14 +2,12 @@ package model;
 
 import java.util.ArrayList;
 
-public class FFGraph {
-    private ArrayList<ArrayList<GraphEdge>> adjacencyList;
+public class FFGraph extends MyGraph{
+
     private int flowFrom,flowTo;
-    private boolean isOriented;
-    public FFGraph(ArrayList<ArrayList<GraphEdge>> adjacencyList, int flowFrom, int flowTo, boolean isOriented) {
-        this.adjacencyList = adjacencyList;
+    public FFGraph(int[][] adjacencyMatrix, boolean isOriented,int flowFrom, int flowTo) {
+        super(adjacencyMatrix,isOriented);
         this.flowFrom = flowFrom;
         this.flowTo = flowTo;
-        this.isOriented = isOriented;
     }
 }
