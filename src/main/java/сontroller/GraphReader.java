@@ -59,7 +59,7 @@ public class GraphReader {
                 this.graph.addNode("N"+to);
                 this.graph.getNode("N"+to).addAttribute("ui.label","N"+to);
             }
-            if(isOriented){
+            if(!isOriented){
                 GraphEdge edgeTo = new GraphEdge(to,from,weight);
                 adjacencyList.get(to).add(edgeTo);
             }
@@ -69,6 +69,7 @@ public class GraphReader {
             this.graph.getEdge("from N"+from+" to N"+to).addAttribute("layout.weight",weight);
         }
         start = scanner.nextInt();
+        start--;
         dGraph = new DGraph(adjacencyList,isOriented,start);
         //todo: handle errors while reading
     }
@@ -98,7 +99,7 @@ public class GraphReader {
                 this.graph.addNode("N"+to);
                 this.graph.getNode("N"+to).addAttribute("ui.label","N"+to);
             }
-            if(isOriented){
+            if(!isOriented){
                 GraphEdge edgeTo = new GraphEdge(to,from,weight);
                 adjacencyMatrix[to][from]=weight;
             }
@@ -109,6 +110,8 @@ public class GraphReader {
         }
         flowFrom = scanner.nextInt();
         flowTo = scanner.nextInt();
+        flowFrom--;
+        flowTo--;
         ffGraph = new FFGraph(adjacencyMatrix,isOriented,flowFrom,flowTo);
     }
     public Graph getGraphicalGraph() {

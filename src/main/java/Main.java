@@ -3,10 +3,12 @@ import model.FFGraph;
 import org.graphstream.graph.Graph;
 
 import org.graphstream.ui.view.Viewer;
+import сontroller.Dijkstra;
 import сontroller.GraphReader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -27,6 +29,11 @@ public class Main {
         addStyleSheet(graphicalGraph);
         Viewer viewer = graphicalGraph.display();
         DGraph graph = graphReader.getdGraph();
+        try {
+            System.out.println(new Dijkstra(graph,graphicalGraph).getDistances());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     private static void solveFF(){
         GraphReader graphReader = new GraphReader(filePath);

@@ -10,4 +10,7 @@ public class DGraph extends MyGraph {
         this.start = start;
     }
 
+    public int getStart() {
+        return start;
+    }
 }
