@@ -67,7 +67,7 @@ public class Dijkstra {
         for(int i=0;i<vertices;i++){
             results.add((i!=start)?INF:0);
             set.add(new Pair((i!=start)?INF:0,i));
-            graphicalGraph.getNode("N"+i).addAttribute("ui.label","N"+i+":"+((i!=start)?INF:0));
+            graphicalGraph.getNode("N"+i).addAttribute("ui.label","N"+i+":"+((i!=start)?"INF":0));
         }
         for(int i=0;i<vertices;i++){
             try {

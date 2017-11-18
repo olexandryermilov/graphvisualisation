@@ -70,6 +70,7 @@ public class GraphReader {
             System.out.println("from N"+from+" to N"+to+" weight: "+weight);
             this.graph.addEdge("from N"+from+" to N"+to,from,to,isOriented);
             this.graph.getEdge("from N"+from+" to N"+to).addAttribute("ui.label",weight);
+            if(isOriented)graph.getEdge("from N"+from+" to N"+to).addAttribute("ui.style","arrow-shape: arrow;");
             //this.graph.getEdge("from N"+from+" to N"+to).addAttribute("layout.weight",weight);
         }
         start = scanner.nextInt();
