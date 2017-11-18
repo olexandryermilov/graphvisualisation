@@ -1,9 +1,9 @@
+import model.FFGraph;
 import org.graphstream.graph.Graph;
 import org.graphstream.ui.view.Viewer;
 import сontroller.GraphReader;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class Main {
     final static String filePath = "graph.txt";
@@ -47,14 +47,13 @@ public class Main {
                 "text-size: 14px;\n"+
                 "text-color: #FFFFFF;\n"+
                 "text-alignment: above;\n"+
-                "}\n"/* +
+                "}\n" +
                 "sprite {\n" +
                 "shape: circle;\n" +
                 "fill-mode: gradient-radial;\n" +
                 "fill-color: #FFF8, #FFF0;\n" +
-                "}"*/);
-        ArrayList<ArrayList<Integer[]>> adjacencyList = graphReader.getAdjacencyList();
+                "}");
+        FFGraph graph = graphReader.getFFGraph();
         Viewer viewer = graphicalGraph.display();
-        //graphicalGraph.getNode(0).
     }
 }

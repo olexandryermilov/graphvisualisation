@@ -1,5 +1,8 @@
 package сontroller;
 
+import model.FFGraph;
+import model.GraphEdge;
+import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.AdjacencyListGraph;
 import org.graphstream.graph.implementations.DefaultGraph;
@@ -13,8 +16,9 @@ import java.util.Scanner;
 public class GraphReader {
     private File fileToRead;
     private Graph graph;
-    private ArrayList<ArrayList<Integer[]>> adjacencyList;
+    private ArrayList<ArrayList<GraphEdge>> adjacencyList;
     private int flowFrom,flowTo;
+    private FFGraph ffGraph;
     public GraphReader(String fileToReadPath){
         try{
             this.fileToRead = new File(fileToReadPath);
@@ -37,7 +41,7 @@ public class GraphReader {
         isOriented = scanner.nextBoolean();
         adjacencyList = new ArrayList<>();
         for(int i=0;i<vertices;i++){
-            adjacencyList.add(new ArrayList<Integer[]>());
+            adjacencyList.add(new ArrayList<>());
         }
         this.graph = new DefaultGraph("Main FFGraph");
         for(int i=0;i<edges;i++){
@@ -50,15 +54,15 @@ public class GraphReader {
                 this.graph.addNode("N"+from);
                 this.graph.getNode("N"+from).addAttribute("ui.label","N"+from);
             }
-            Integer[] edge = {to,weight};
-            adjacencyList.get(from).add(edge);
+            GraphEdge edgeFrom = new GraphEdge(from,to,weight);
+            adjacencyList.get(from).add(edgeFrom);
             if(graph.getNode(to)==null) {
                 this.graph.addNode("N"+to);
                 this.graph.getNode("N"+to).addAttribute("ui.label","N"+to);
             }
             if(isOriented){
-                edge[0]=from;
-                adjacencyList.get(to).add(edge);
+                GraphEdge edgeTo = new GraphEdge(to,from,weight);
+                adjacencyList.get(to).add(edgeTo);
             }
             System.out.println("from N"+from+" to N"+to+" weight: "+weight);
             this.graph.addEdge("from N"+from+" to N"+to,from,to,isOriented);
@@ -70,12 +74,13 @@ public class GraphReader {
         flowFrom--;
         flowTo = scanner.nextInt();
         flowTo--;
+        ffGraph = new FFGraph(adjacencyList,flowFrom,flowTo,isOriented);
         //todo: handle errors while reading
     }
     public Graph getGraphicalGraph() {
         return graph;
     }
-    public ArrayList<ArrayList<Integer[]>> getAdjacencyList(){
-        return adjacencyList;
+    public FFGraph getFFGraph(){
+        return ffGraph;
     }
 }
