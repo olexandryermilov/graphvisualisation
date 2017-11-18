@@ -20,15 +20,8 @@ node:clicked {
 node:selected {
  fill-color:  #ffff00, #100051;
 }
-node:chosen{
-    shape: circle;
-    size-mode: dyn-size;
-    size: 37px;
-    fill-mode: gradient-radial;
-    fill-color: #000000, #ffff80;
-    stroke-mode: none;
-    text-size: 11px;
-    text-color: #FFFFFF;
+node:used{
+    fill-color: #00FF00, #100051;
 }
 edge {
  //shape: cubic-curve;

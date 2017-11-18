@@ -19,7 +19,8 @@ public class Dijkstra {
         this.vertices = graph.getAdjacencyList().size();
         this.start=graph.getStart();
     }
-
+    private final long RELAX_SLEEP=1000;
+    private final long ITERATION_SLEEP=1500;
     private class Pair implements Comparable<Pair>{
         int distance,vertice;
 
@@ -66,38 +67,32 @@ public class Dijkstra {
         for(int i=0;i<vertices;i++){
             results.add((i!=start)?INF:0);
             set.add(new Pair((i!=start)?INF:0,i));
-            graphicalGraph.getNode("N"+i).addAttribute("ui.label",(i!=start)?INF:0);
+            graphicalGraph.getNode("N"+i).addAttribute("ui.label","N"+i+":"+((i!=start)?INF:0));
         }
         for(int i=0;i<vertices;i++){
             try {
-                Thread.sleep(2000);
+                Thread.sleep(ITERATION_SLEEP);
             } catch (Exception e) {
                 e.printStackTrace();
             }
             Pair p = set.first();
             set.remove(p);
             int v = p.vertice;
-            graphicalGraph.getNode("N"+v).addAttribute("ui.selected");/*("ui.style","shape: circle;\n" +
-                    "    size-mode: dyn-size;\n" +
-                    "    size: 37px;\n" +
-                    "    fill-mode: gradient-radial;\n" +
-                    "    fill-color: #ffff00, #ffff80;\n" +
-                    "    stroke-mode: none;\n" +
-                    "    text-size: 11px;\n" +
-                    "    text-color: #FFFFFF;" );*/
+            graphicalGraph.getNode("N"+v).addAttribute("ui.selected");
             for(int j=0;j<graph.getAdjacencyList().get(v).size();j++){
                 int to=graph.getAdjacencyList().get(v).get(j).getTo(), d=graph.getAdjacencyList().get(v).get(j).getWeight();
+                graphicalGraph.getNode("N"+to).addAttribute("ui.clicked");
+                Thread.sleep(RELAX_SLEEP);
                 if(results.get(v)+d< results.get(to)){
                     set.remove(new Pair(results.get(to),to));
                     results.set(to,results.get(v)+d);
-                    graphicalGraph.getNode("N"+to).addAttribute("ui.clicked");
-                    Thread.sleep(500);
-                    graphicalGraph.getNode("N"+to).setAttribute("ui.label",results.get(v)+d);
-                    Thread.sleep(500);
-                    graphicalGraph.getNode("N"+to).removeAttribute("ui.clicked");
+                    graphicalGraph.getNode("N"+to).setAttribute("ui.label","N"+to+":"+(results.get(v)+d));
+                    Thread.sleep(RELAX_SLEEP);
                     set.add(new Pair(results.get(to),to));
                 }
+                graphicalGraph.getNode("N"+to).removeAttribute("ui.clicked");
             }
+            graphicalGraph.getNode("N"+v).addAttribute("ui.style","fill-color: #00FF00, #100051;");
             graphicalGraph.getNode("N"+v).removeAttribute("ui.selected");
         }
         return results;

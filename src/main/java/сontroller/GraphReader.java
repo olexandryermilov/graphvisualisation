@@ -11,6 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class GraphReader {
     private File fileToRead;
     private Graph graph;
@@ -43,6 +44,9 @@ public class GraphReader {
             adjacencyList.add(new ArrayList<>());
         }
         this.graph = new DefaultGraph("Main DGraph");
+        for(int i=0;i<vertices;i++){
+            graph.addNode("N"+i);
+        }
         for(int i=0;i<edges;i++){
             from = scanner.nextInt();
             to = scanner.nextInt();
@@ -66,7 +70,7 @@ public class GraphReader {
             System.out.println("from N"+from+" to N"+to+" weight: "+weight);
             this.graph.addEdge("from N"+from+" to N"+to,from,to,isOriented);
             this.graph.getEdge("from N"+from+" to N"+to).addAttribute("ui.label",weight);
-            this.graph.getEdge("from N"+from+" to N"+to).addAttribute("layout.weight",weight);
+            //this.graph.getEdge("from N"+from+" to N"+to).addAttribute("layout.weight",weight);
         }
         start = scanner.nextInt();
         start--;
@@ -83,6 +87,9 @@ public class GraphReader {
         isOriented = scanner.nextBoolean();
         adjacencyMatrix = new int[vertices][vertices];
         this.graph = new DefaultGraph("Main FFGraph");
+        for(int i=0;i<vertices;i++){
+            graph.addNode("N"+i);
+        }
         for(int i=0;i<edges;i++){
             from = scanner.nextInt();
             to = scanner.nextInt();
