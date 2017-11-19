@@ -112,9 +112,9 @@ public class GraphReader {
                 adjacencyMatrix[to][from]=weight;
             }
             System.out.println("from N"+from+" to N"+to+" weight: "+weight);
-            this.graph.addEdge("from N"+from+" to N"+to,from,to,isOriented);
+            this.graph.addEdge("from N"+from+" to N"+to,from,to,!isOriented);
             this.graph.getEdge("from N"+from+" to N"+to).addAttribute("ui.label","0/"+weight);
-            this.graph.getEdge("from N"+from+" to N"+to).addAttribute("layout.weight",weight);
+            //this.graph.getEdge("from N"+from+" to N"+to).addAttribute("layout.weight",weight);
         }
         flowFrom = scanner.nextInt();
         flowTo = scanner.nextInt();

@@ -4,6 +4,7 @@ import org.graphstream.graph.Graph;
 
 import org.graphstream.ui.view.Viewer;
 import сontroller.Dijkstra;
+import сontroller.FordFulkerson;
 import сontroller.GraphReader;
 
 import java.io.File;
@@ -45,6 +46,7 @@ public class Main {
         addStyleSheet(graphicalGraph);
         Viewer viewer = graphicalGraph.display();
         FFGraph graph = graphReader.getFFGraph();
+        FordFulkerson ff = new FordFulkerson(graph,graphicalGraph);
     }
     public static void main(String[] argc){
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");

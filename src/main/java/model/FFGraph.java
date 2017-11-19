@@ -10,4 +10,12 @@ public class FFGraph extends MyGraph{
         this.flowFrom = flowFrom;
         this.flowTo = flowTo;
     }
+
+    public int getFlowFrom() {
+        return flowFrom;
+    }
+
+    public int getFlowTo() {
+        return flowTo;
+    }
 }

@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="da4b3412-947e-433c-83ec-c5a0214ca75b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/сontroller/Dijkstra.class" afterPath="$PROJECT_DIR$/out/production/classes/сontroller/Dijkstra.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/сontroller/GraphReader.class" afterPath="$PROJECT_DIR$/out/production/classes/сontroller/GraphReader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/model/FFGraph.class" afterPath="$PROJECT_DIR$/out/production/classes/model/FFGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/сontroller/FordFulkerson.class" afterPath="$PROJECT_DIR$/out/production/classes/сontroller/FordFulkerson.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.txt" afterPath="$PROJECT_DIR$/config.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph.txt" afterPath="$PROJECT_DIR$/graph.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css" afterPath="$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java" afterPath="$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/FFGraph.java" afterPath="$PROJECT_DIR$/src/main/java/model/FFGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java" afterPath="$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,17 +33,17 @@
         <entry file="file://$PROJECT_DIR$/config.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="85">
+              <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -52,9 +52,14 @@
       <file leaf-file-name="FFGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/FFGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="87" lean-forward="false" selection-start-line="7" selection-start-column="87" selection-end-line="7" selection-end-column="87" />
-              <folding />
+            <state relative-caret-position="102">
+              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <folding>
+                <element signature="e#351#352#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,10 +67,24 @@
       <file leaf-file-name="FordFulkerson.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/FordFulkerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+            <state relative-caret-position="-152">
+              <caret line="47" column="82" lean-forward="true" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphEdge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/GraphEdge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="method#equals#0;class#GraphEdge#0" expanded="false" />
+                <element signature="method#hashCode#0;class#GraphEdge#0" expanded="false" />
+                <element signature="method#toString#0;class#GraphEdge#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -83,6 +102,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="visualizer-stylesheet.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/DGraph.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphReader.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GraphReader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            <state relative-caret-position="306">
+              <caret line="114" column="65" lean-forward="false" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,8 +137,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+            <state relative-caret-position="256">
+              <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -428,15 +457,15 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/model/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/GraphEdge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/сontroller/FordFulkerson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/FFGraph.java" />
-        <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/src/main/java/model/MyGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/DGraph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css" />
         <option value="$PROJECT_DIR$/src/main/java/сontroller/Dijkstra.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/FFGraph.java" />
+        <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/graph.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/сontroller/FordFulkerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java" />
       </list>
     </option>
@@ -447,7 +476,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-14" />
     <option name="y" value="3" />
     <option name="width" value="1366" />
@@ -660,12 +689,12 @@
       <option name="presentableId" value="Default" />
       <updated>1510950166674</updated>
       <workItem from="1510950172889" duration="27988000" />
-      <workItem from="1511041842063" duration="1180000" />
+      <workItem from="1511041842063" duration="5730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29168000" />
+    <option name="totallyTimeSpent" value="33718000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,7 +706,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -743,7 +773,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="87" lean-forward="false" selection-start-line="7" selection-start-column="87" selection-end-line="7" selection-end-column="87" />
-          <folding />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,6 +848,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="818" column="17" lean-forward="false" selection-start-line="818" selection-start-column="17" selection-end-line="818" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -848,6 +884,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2726">
           <caret line="1357" column="0" lean-forward="false" selection-start-line="1357" selection-start-column="0" selection-end-line="1357" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -902,38 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/FFGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="87" lean-forward="false" selection-start-line="7" selection-start-column="87" selection-end-line="7" selection-end-column="87" />
           <folding />
         </state>
       </provider>
@@ -946,30 +951,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/GraphEdge.java">
+    <entry file="file://$PROJECT_DIR$/config.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="73" column="14" lean-forward="false" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+        <state relative-caret-position="256">
+          <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/FordFulkerson.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/FFGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/visualizer-stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -983,11 +1008,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/GraphEdge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="method#equals#0;class#GraphEdge#0" expanded="false" />
+            <element signature="method#hashCode#0;class#GraphEdge#0" expanded="false" />
+            <element signature="method#toString#0;class#GraphEdge#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/FordFulkerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="47" column="82" lean-forward="true" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/сontroller/GraphReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="114" column="65" lean-forward="false" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
