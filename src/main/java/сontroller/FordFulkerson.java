@@ -69,6 +69,7 @@ public class FordFulkerson {
             {
                 int prev = from[cur];
                 flow[prev][cur] += cf;
+                graphicGraph.getEdge("from N"+prev+" to N"+cur).addAttribute("ui.label",flow[prev][cur]+"/"+adjacencyMatrix[prev][cur]);
                 flow[cur][prev] -= cf;
                 cur = prev;
             }
