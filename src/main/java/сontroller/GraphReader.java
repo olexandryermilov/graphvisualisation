@@ -76,7 +76,6 @@ public class GraphReader {
         start = scanner.nextInt();
         start--;
         dGraph = new DGraph(adjacencyList,isOriented,start);
-        //todo: handle errors while reading
     }
     public void readFFGraph() throws FileNotFoundException {
         Scanner scanner = new Scanner(fileToRead);
@@ -101,15 +100,14 @@ public class GraphReader {
                 this.graph.addNode("N"+from);
                 this.graph.getNode("N"+from).addAttribute("ui.label","N"+from);
             }
-            GraphEdge edgeFrom = new GraphEdge(from,to,weight);
             adjacencyMatrix[from][to]=weight;
             if(graph.getNode(to)==null) {
                 this.graph.addNode("N"+to);
                 this.graph.getNode("N"+to).addAttribute("ui.label","N"+to);
             }
             if(!isOriented){
-                GraphEdge edgeTo = new GraphEdge(to,from,weight);
                 adjacencyMatrix[to][from]=weight;
+                //this.graph.addEdge("from N"+to+" to N"+from,(Node)graph.getNode("N"+to),graph.getNode("N"+from));
             }
             System.out.println("from N"+from+" to N"+to+" weight: "+weight);
             this.graph.addEdge("from N"+from+" to N"+to,from,to,!isOriented);

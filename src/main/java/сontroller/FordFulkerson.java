@@ -23,6 +23,10 @@ public class FordFulkerson {
         flowTo = graph.getFlowTo();
         flow = new int[vertices][vertices];
         adjacencyMatrix = graph.getAdjacencyMatrix();
+        graphicGraph.getNode("N"+flowFrom).setAttribute("ui.color","#00FF00,#100051;");
+        graphicGraph.getNode("N"+flowTo).setAttribute("ui.color","#00AA00,#100051");
+        graphicGraph.getNode("N"+flowFrom).addAttribute("ui.style","fill-color: #00FF00, #100051;");
+        graphicGraph.getNode("N"+flowTo).addAttribute("ui.style","fill-color: #00AA00, #100051;");
         try {
             solve();
         } catch (InterruptedException e) {
@@ -42,17 +46,21 @@ public class FordFulkerson {
             {
                 cur = q[h++];
                 graphicGraph.getNode("N"+cur).setAttribute("ui.clicked");
+                graphicGraph.getNode("N"+cur).setAttribute("ui.label","N"+cur);
                 Thread.sleep(1000);
                 for (int v=0; v<vertices; v++) {
                     if (from[v] == -1 && adjacencyMatrix[cur][v] - flow[cur][v] > 0) {
                         graphicGraph.getNode("N" + v).setAttribute("ui.selected");
+                        graphicGraph.getNode("N"+v).setAttribute("ui.label","N"+v);
                         Thread.sleep(750);
                         q[t++] = v;
                         from[v] = cur;
                         graphicGraph.getNode("N"+v).removeAttribute("ui.selected");
+                        graphicGraph.getNode("N"+v).setAttribute("ui.label","N"+v);
                     }
                 }
                 graphicGraph.getNode("N"+cur).removeAttribute("ui.clicked");
+                graphicGraph.getNode("N"+cur).setAttribute("ui.label","N"+cur);
             }
 
             if (from[flowTo] == -1)
