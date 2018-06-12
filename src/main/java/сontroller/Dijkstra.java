@@ -2,7 +2,6 @@ package сontroller;
 
 import model.DGraph;
 import org.graphstream.graph.Graph;
-import org.graphstream.ui.graphicGraph.GraphicGraph;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
@@ -90,6 +89,7 @@ public class Dijkstra {
                     Thread.sleep(RELAX_SLEEP);
                     set.add(new Pair(results.get(to),to));
                 }
+
                 graphicalGraph.getNode("N"+to).removeAttribute("ui.clicked");
             }
             graphicalGraph.getNode("N"+v).addAttribute("ui.style","fill-color: #00FF00, #100051;");

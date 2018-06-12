@@ -10,6 +10,9 @@ public class MyGraph {
         this.adjacencyMatrix = adjacencyMatrix;
         this.isOriented=isOriented;
     }
+    public MyGraph() {
+
+    }
 
     public MyGraph(ArrayList<ArrayList<GraphEdge>> adjacencyList, boolean isOriented) {
         this.adjacencyList = adjacencyList;

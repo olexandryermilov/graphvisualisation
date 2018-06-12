@@ -1,16 +1,18 @@
 import model.DGraph;
 import model.FFGraph;
+import model.HungaryGraph;
+import model.TSPGraph;
 import org.graphstream.graph.Graph;
-
+import org.graphstream.graph.implementations.DefaultGraph;
+import org.graphstream.ui.graphicGraph.GraphicGraph;
 import org.graphstream.ui.view.Viewer;
-import сontroller.Dijkstra;
-import сontroller.FordFulkerson;
-import сontroller.GraphReader;
+import сontroller.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+
 public class Main {
     final static String filePath = "graph.txt";
     final static String configPath = "config.txt";
@@ -56,7 +58,53 @@ public class Main {
         FFGraph graph = graphReader.getFFGraph();
         FordFulkerson ff = new FordFulkerson(graph,graphicalGraph);
     }
-    public static void main(String[] argc){
+    private static void solveTSP() throws InterruptedException {
+        GraphReader graphReader = new GraphReader(filePath);
+        try {
+            graphReader.readTSPGraph();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Graph graphicalGraph = graphReader.getGraphicalGraph();
+        try {
+            addStyleSheet(graphicalGraph);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //Viewer viewer = graphicalGraph.display();
+        Graph treeGraph = new DefaultGraph("TreeGraph");
+        try {
+            addStyleSheet(treeGraph);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Viewer viewer2= treeGraph.display();
+        TSPGraph graph = graphReader.getTSPGraph();
+        TSPSolver tsp = new TSPSolver(graph,graphicalGraph,treeGraph);
+            tsp.solve();
+    }
+
+    private static void solveHungary(){
+        GraphReader graphReader = new GraphReader(filePath);
+        try {
+            graphReader.readHungaryGraph();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        /*Graph graphicalGraph = graphReader.getGraphicalGraph();
+        try {
+            addStyleSheet(graphicalGraph);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Viewer viewer = graphicalGraph.display();*/
+        HungaryGraph graph = graphReader.getHungaryGraph();
+        HungarySolver hungary = new HungarySolver(graph);
+            hungary.solve();
+
+    }
+
+    public static void main(String[] argc) throws InterruptedException {
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         Scanner scanner = null;
         try {
@@ -72,7 +120,17 @@ public class Main {
             if(algo.equals("FF"))
                 solveFF();
             else{
-                System.out.println("Bad algorithm request");
+                if(algo.equals("TSP")){
+                    solveTSP();
+                }
+                else{
+                    if(algo.equals("Hungary")){
+                        solveHungary();
+                    }
+                    else{
+                        System.out.println("Bad algorithm request");
+                    }
+                }
             }
         }
 

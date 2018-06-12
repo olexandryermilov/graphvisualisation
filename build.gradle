@@ -1,4 +1,4 @@
-group 'org.graphvisualisation'
+group 'graphone'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -15,5 +15,4 @@ dependencies {
     compile group: 'org.graphstream', name: 'gs-ui', version: '1.3'
     compile group: 'org.graphstream', name: 'gs-algo', version: '1.3'
     compile group: 'org.graphstream', name: 'util', version: '1.0'
-
 }

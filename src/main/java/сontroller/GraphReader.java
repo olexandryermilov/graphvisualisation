@@ -1,13 +1,11 @@
 package сontroller;
 
-import model.DGraph;
-import model.FFGraph;
-import model.GraphEdge;
+import model.*;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.DefaultGraph;
 
-
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,6 +19,8 @@ public class GraphReader {
     private FFGraph ffGraph;
     private DGraph dGraph;
     private int[][] adjacencyMatrix;
+    private TSPGraph tspGraph;
+    private HungaryGraph hungaryGraph;
     public GraphReader(String fileToReadPath){
         try{
             this.fileToRead = new File(fileToReadPath);
@@ -120,6 +120,83 @@ public class GraphReader {
         flowTo--;
         ffGraph = new FFGraph(adjacencyMatrix,isOriented,flowFrom,flowTo);
     }
+    public void readTSPGraph() throws FileNotFoundException {
+        Scanner scanner = new Scanner(fileToRead);
+        int vertices, edges=0;
+        int from,to,weight;
+        boolean isOriented=false;
+        vertices=scanner.nextInt();
+        this.graph = new DefaultGraph("Main TSPGraph");
+        ArrayList<GraphVertice> graphVertices = new ArrayList<>();
+        for(int i=0;i<vertices;i++){
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            graphVertices.add(new GraphVertice(x,y));
+            graph.addNode("N"+i);
+        }
+        start = scanner.nextInt();
+        start--;
+        tspGraph = new TSPGraph(graphVertices,start);
+        for(int i=0;i<vertices;i++) {
+            for (int j = i + 1; j < vertices; j++) {
+                from = i;
+                to = j;
+                weight = tspGraph.getAdjacencyMatrix()[i][j];
+                if (graph.getNode(from) == null) {
+                    this.graph.addNode("N" + from);
+                    this.graph.getNode("N" + from).addAttribute("ui.label", "N" + from);
+                }
+                GraphEdge edgeFrom = new GraphEdge(from, to, weight);
+                if (graph.getNode(to) == null) {
+                    this.graph.addNode("N" + to);
+                    this.graph.getNode("N" + to).addAttribute("ui.label", "N" + to);
+                }
+                GraphEdge edgeTo = new GraphEdge(to, from, weight);
+                System.out.println("from N" + from + " to N" + to + " weight: " + weight);
+                this.graph.addEdge("from N" + from + " to N" + to, from, to, false);
+                this.graph.getEdge("from N" + from + " to N" + to).addAttribute("ui.label", weight);
+            }
+        }
+    }
+
+    public void readHungaryGraph() throws FileNotFoundException {
+        Scanner scanner = new Scanner(fileToRead);
+        int vertices;
+        boolean isOriented=true;
+        vertices=scanner.nextInt();
+        //this.graph = new DefaultGraph("Main TSPGraph");
+        adjacencyMatrix = new int[vertices+1][vertices+1];
+        for(int i=1;i<=vertices;i++){
+            for(int j=1;j<=vertices;j++){
+                adjacencyMatrix[i][j]=scanner.nextInt();
+            }
+        }
+        hungaryGraph = new HungaryGraph(adjacencyMatrix,vertices);
+        /*for(int i=0;i<vertices;i++) {
+            for (int j = i + 1; j < vertices; j++) {
+                from = i;
+                to = j;
+                weight = tspGraph.getAdjacencyMatrix()[i][j];
+                if (graph.getNode(from) == null) {
+                    this.graph.addNode("N" + from);
+                    this.graph.getNode("N" + from).addAttribute("ui.label", "N" + from);
+                }
+                GraphEdge edgeFrom = new GraphEdge(from, to, weight);
+                if (graph.getNode(to) == null) {
+                    this.graph.addNode("N" + to);
+                    this.graph.getNode("N" + to).addAttribute("ui.label", "N" + to);
+                }
+                GraphEdge edgeTo = new GraphEdge(to, from, weight);
+                System.out.println("from N" + from + " to N" + to + " weight: " + weight);
+                this.graph.addEdge("from N" + from + " to N" + to, from, to, false);
+                this.graph.getEdge("from N" + from + " to N" + to).addAttribute("ui.label", weight);
+            }
+        }*/
+    }
+
+    public TSPGraph getTSPGraph(){
+        return tspGraph;
+    }
     public Graph getGraphicalGraph() {
         return graph;
     }
@@ -129,5 +206,9 @@ public class GraphReader {
 
     public DGraph getdGraph() {
         return dGraph;
+    }
+
+    public HungaryGraph getHungaryGraph() {
+        return hungaryGraph;
     }
 }

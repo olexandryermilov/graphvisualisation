@@ -2,9 +2,6 @@ package сontroller;
 
 import model.FFGraph;
 import org.graphstream.graph.Graph;
-import org.graphstream.ui.graphicGraph.GraphicGraph;
-
-import java.util.ArrayList;
 
 public class FordFulkerson {
     private FFGraph graph;
